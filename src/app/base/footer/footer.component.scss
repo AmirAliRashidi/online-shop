@@ -1,0 +1,26 @@
+@use '../../../themes.scss' as *;
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .gototop-button{
+        color: #7c7c7c !important;
+    }
+
+    .main-contact-us {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+
+        .footer-logo{
+            width: 150px;
+            height: 150px;
+            padding: 10px;
+            border-radius: 100%;
+            background-color: var(--header-background-color);
+        }
+    }
+}

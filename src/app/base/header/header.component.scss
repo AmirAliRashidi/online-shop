@@ -1,0 +1,50 @@
+@use '../../../themes.scss' as *;
+
+.main-header {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    .logo-main {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .logo-style {
+            width: 35px;
+            height: 35px;
+        }
+
+        .shop-name {
+            margin: 0 5px;
+            color: var(--header-font-color);
+        }
+    }
+
+    .buttons-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .buttons-header:hover {
+            border-bottom: 3px solid #fff;
+            transition: border-color .25s ease-in-out;
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    background-color: var(--color-basic-100);
+    border-radius: 4px;
+    // padding: 5px 14px;
+    border: 1px solid var(--color-basic-300);
+    top: 100%;
+}

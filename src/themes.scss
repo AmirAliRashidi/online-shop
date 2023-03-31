@@ -1,0 +1,19 @@
+@forward '@nebular/theme/styles/theming';
+@use '@nebular/theme/styles/theming'as *;
+@use '@nebular/theme/styles/themes/default';
+
+$nb-themes: nb-register-theme(( //header styles  
+    header-background-color: #3f51b5,
+    header-font-color: #fefefe,
+
+    //Base Style
+    layout-background-color: #fff,
+
+    //ghost button style
+    button-ghost-basic-text-color: #fefefe,
+    button-ghost-basic-hover-text-color: button-ghost-basic-text-color,
+    button-ghost-basic-hover-background-color: button-ghost-background-color,
+    button-ghost-basic-focus-background-color: button-ghost-background-color,
+    button-ghost-basic-focus-border-color: button-ghost-basic-hover-border-color,
+
+  ), default, default);
