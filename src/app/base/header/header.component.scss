@@ -1,4 +1,4 @@
-@use '../../../themes.scss' as *;
+@use '../../../themes.scss'as *;
 
 .main-header {
     height: 100%;
@@ -30,21 +30,107 @@
         flex-wrap: nowrap;
 
         .buttons-header:hover {
-            border-bottom: 3px solid #fff;
-            transition: border-color .25s ease-in-out;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .buttons-header:hover::after {
+            width: 100%;
+        }
+
+        .buttons-header::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--color-basic-100);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .categories-box {
+            position: relative;
+
+            .dropdown-menu {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.1), 0 20px 40px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+                list-style-type: none;
+                border-radius: var(--border-radius);
+                background-color: var(--color-basic-100);
+                display: flex;
+                flex-direction: row;
+                position: absolute;
+                min-width: 500px;
+                min-height: 250px;
+                max-height: 450px;
+
+                .category-name-container {
+                    display: flex;
+                    flex-direction: column;
+                    border-right: 3px solid var(--header-background-color);
+
+                    .category-name {
+                        padding: 15px;
+                        cursor: pointer;
+                        font-weight: 600;
+                        border-radius: var(--border-radius) var(--border-radius) 0 0;
+                    }
+
+                    .category-name:hover {
+                        position: relative;
+                        transition: all 0.3s ease-in-out;
+                        color: var(--header-background-color);
+                        background-color: var(--color-basic-300);
+                    }
+
+                    .category-name:hover::after {
+                        width: 100%;
+                    }
+
+                    .category-name::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -2px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 0;
+                        height: 2px;
+                        background-color: var(--header-background-color);
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    .category-active {
+                        color: var(--header-background-color);
+                        background-color: var(--color-basic-300);
+                        border-bottom: 2px solid var(--header-background-color);
+                    }
+                }
+
+                .items-container {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    align-content: flex-start;
+                    justify-content: flex-start;
+                    padding: 10px;
+                    width: 100%;
+
+                    .item-style {
+                        padding: 10px;
+                        cursor: pointer;
+                        margin: 0;
+                        font-weight: 300;
+                    }
+
+                    .item-style:hover {
+                        color: var(--header-background-color);
+                        transition: all 0.3s ease-in-out;
+                        font-weight: 400;
+                    }
+                }
+            }
         }
     }
-}
-
-.dropdown {
-    position: relative;
-    padding: 10px 0;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    background-color: var(--color-basic-100);
-    border-radius: 4px;
-    // padding: 5px 14px;
-    border: 1px solid var(--color-basic-300);
-    top: 100%;
 }
