@@ -4,9 +4,7 @@
 
 @include nb-install() {
   @include nb-theme-global();
-}
-
-;
+};
 
 .space-icon {
   margin: 0 5px;
