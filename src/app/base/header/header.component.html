@@ -14,7 +14,7 @@
                 <div class="category-name-container">
                     <div *ngFor="let cat of categories" class="category-name"
                         (mouseenter)="getCategoryItems(cat)" [ngClass]="cat.active ? 'category-active' : ''">
-                        {{ cat.category_name }}
+                        {{ cat.category_name.toUpperCase() }}
                     </div>
                 </div>
                 <div class="items-container">

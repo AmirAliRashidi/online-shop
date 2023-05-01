@@ -21,9 +21,8 @@ export class HeaderComponent implements OnInit {
 
   async ngOnInit() {
     this.isLoading = true;
-    const data = await this._httpClient.get("assets/JSON/categories.json").toPromise();
-    (this.categories as any) = data;
-    if (this.categories[0]?.items?.length > 0) this.getCategoryItems(this.categories[0])
+    (this.categories as any) = await this._httpClient.get("assets/JSON/categories.json").toPromise();
+    if (this.categories[0]?.items?.length > 0) this.getCategoryItems(this.categories[0]);
     this.isLoading = false;
   }
 
