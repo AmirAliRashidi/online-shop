@@ -1,3 +1,4 @@
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { PublicRoutingModule } from './public-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -12,6 +13,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     PublicRoutingModule,
     SharedModule,
+    CarouselModule,
   ],
 })
 export class PublicModule { }

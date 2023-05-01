@@ -16,5 +16,6 @@ $nb-themes: nb-register-theme(( //header styles
     button-ghost-basic-focus-background-color: button-ghost-background-color,
     button-ghost-basic-focus-border-color: button-ghost-basic-hover-border-color,
 
+    layout-padding: 0,
     border-radius: 15px,
   ), default, default);
