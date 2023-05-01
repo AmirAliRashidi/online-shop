@@ -26,6 +26,7 @@
             padding: 15px;
             width: 120px;
             height: 120px;
+            transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 
             .category-image {
                 width: 50px;
@@ -36,6 +37,11 @@
                 color: var(--primary-font-color);
                 font-weight: bold;
             }
+        }
+
+        .category-detail:hover{
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transform: scale(1.1);
         }
     }
 }
