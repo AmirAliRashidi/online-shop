@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NbCardModule, NbIconModule, NbInputModule, NbLayoutModule, NbToastrModule, NbButtonModule } from '@nebular/theme';
 import { HttpClientModule } from '@angular/common/http';
+import { LoaderComponent } from '../base/loader/loader.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LoaderComponent
+  ],
   imports: [
     HttpClientModule,
     CommonModule,
@@ -24,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     NbCardModule,
     NbToastrModule,
     NbLayoutModule,
+    LoaderComponent
   ],
   providers: [],
 })

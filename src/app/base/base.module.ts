@@ -11,7 +11,6 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    LoaderComponent,
   ],
   imports: [
     CommonModule,
