@@ -1,7 +1,16 @@
-<owl-carousel-o [options]="customOptions">
-    <ng-container *ngFor="let slide of dynamicSlides">
-        <ng-template carouselSlide>
-            <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title" class="carousel-image">
-        </ng-template>
-    </ng-container>
-</owl-carousel-o>
+<app-loader *ngIf="isLoading"></app-loader>
+<div class="main-home">
+    <owl-carousel-o [options]="customOptions">
+        <ng-container *ngFor="let slide of dynamicSlides">
+            <ng-template carouselSlide>
+                <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title" class="carousel-image">
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+    <div class="minimeal-categories">
+        <div *ngFor="let category of categories" class="category-detail">
+            <img class="category-image" [src]="category.image">
+            <p class="category-name">{{ category.category_name.toUpperCase() }}</p>
+        </div>
+    </div>
+</div>
