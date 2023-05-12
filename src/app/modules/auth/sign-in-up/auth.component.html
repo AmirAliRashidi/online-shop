@@ -1,0 +1,39 @@
+<div class="main-auth-conatiner">
+	<div class="main-logo" (click)="gotoHome()">
+		<img class="logo-style" src="assets/image/logo.png" alt="online shop logo">
+	</div>
+	<div class="container" [ngClass]="isActive ? 'right-panel-active' : ''" id="container">
+		<div class="form-container sign-up-container">
+			<form>
+				<h1>{{ dict.create_account }}</h1>
+				<input nbInput fullWidth class="input-style" type="text" placeholder="Name" />
+				<input nbInput fullWidth class="input-style" type="email" placeholder="Email" />
+				<input nbInput fullWidth class="input-style" type="password" placeholder="Password" />
+				<button nbButton fullWidth status="primary">{{ dict.signup }}</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form>
+				<h1>{{ dict.login }}</h1>
+				<input nbInput fullWidth class="input-style" type="email" placeholder="Email" />
+				<input nbInput fullWidth class="input-style" type="password" placeholder="Password" />
+				<a href="#">{{ dict.forgot_password }}</a>
+				<button nbButton fullWidth status="primary">{{ dict.login }}</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>{{ dict.login_maintext }}</h1>
+					<p>{{ dict.login_subtext }}</p>
+					<button nbButton status="danger" id="signIn" (click)="changeStatus()">{{ dict.login }}</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>{{ dict.signup_maintext }}</h1>
+					<p>{{ dict.signup_subtext }}</p>
+					<button nbButton status="danger" id="signUp" (click)="changeStatus()">{{ dict.signup }}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ICategories } from './../base-interface';
 import { Component, OnInit } from '@angular/core';
 import { OnlineShopDictionary } from 'src/app/dictionary';
@@ -17,6 +18,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private _httpClient: HttpClient,
+    private _router: Router,
   ) { }
 
   async ngOnInit() {
@@ -39,5 +41,8 @@ export class HeaderComponent implements OnInit {
         cat.active = false;
       }
     }
+  }
+  signInUp(){
+    this._router.navigateByUrl('/auth/sign-in-up')
   }
 }

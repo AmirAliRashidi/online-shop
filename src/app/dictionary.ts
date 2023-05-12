@@ -1,5 +1,5 @@
 export const OnlineShopDictionary = {
-    login: 'Login',
+    login: 'Log in',
     categories: 'Categories',
     shopname: 'shop name',
     support: 'support',
@@ -7,4 +7,11 @@ export const OnlineShopDictionary = {
     supportemail: 'amiralii.rashidii@gmail.com',
     go_up: 'back to top',
     price_unit: ' $ ',
+    signup: 'sign up',
+    create_account: 'Create Account',
+    forgot_password: 'Forgot your password?',
+    login_maintext: 'Welcome Back!',
+    login_subtext: 'To keep connected with us please login with your personal info',
+    signup_maintext: 'Hello, Friend!',
+    signup_subtext: 'Enter your personal details and start journey with us',
 }
