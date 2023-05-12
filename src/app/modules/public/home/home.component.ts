@@ -1,7 +1,9 @@
+import { OnlineShopDictionary } from 'src/app/dictionary';
+import { IItems } from './../../../base/base-interface';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { ICategoriesHeader } from 'src/app/base/base-interface';
+import { ICategories } from 'src/app/base/base-interface';
 
 @Component({
   selector: 'app-home',
@@ -48,42 +50,72 @@ export class HomeComponent implements OnInit {
     }
   ]
 
-  isLoading: boolean = true;
-
-  categories: ICategoriesHeader[] = [];
-  items: string[] = [];
-
-  constructor(
-    private _httpClient: HttpClient,
-  ) { }
-  customOptions: OwlOptions = {
+  mainOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
     dots: true,
-    navSpeed: 600,
+    navSpeed: 100,
     navText: ['&#8249', '&#8250;'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      760: {
-        items: 3
-      },
-      1000: {
-        items: 1
-      }
-    },
+    items: 1,
+    // responsive: {
+    //   0: {
+    //     items: 1
+    //   },
+    //   400: {
+    //     items: 2
+    //   },
+    //   760: {
+    //     items: 3
+    //   },
+    //   1000: {
+    //     items: 1
+    //   }
+    // },
     nav: false
   }
-  
+
+  itemsOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 200,
+    navText: ['&#8249', '&#8250;'],
+    items: 6,
+    responsive: {
+      0: {
+        items: 2
+      },
+      400: {
+        items: 3
+      },
+      760: {
+        items: 4
+      },
+      1000: {
+        items: 5
+      }
+    },
+    nav: true
+  }
+
+  isLoading: boolean = true;
+  categories: ICategories[] = [];
+  items: IItems[] = [];
+
+  dict = OnlineShopDictionary;
+
+  constructor(
+    private _httpClient: HttpClient,
+  ) { }
+
   async ngOnInit() {
     this.isLoading = true;
     (this.categories as any) = await this._httpClient.get("assets/JSON/categories.json").toPromise();
+    (this.items as any) = await this._httpClient.get("assets/JSON/fake-items.json").toPromise();
     setTimeout(() => {
       this.isLoading = false;
     }, 2000)

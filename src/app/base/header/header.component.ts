@@ -1,4 +1,4 @@
-import { ICategoriesHeader } from './../base-interface';
+import { ICategories } from './../base-interface';
 import { Component, OnInit } from '@angular/core';
 import { OnlineShopDictionary } from 'src/app/dictionary';
 import { HttpClient } from '@angular/common/http';
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   isLoading: boolean = true;
   showNotifications: boolean = false;
   dict = OnlineShopDictionary;
-  categories: ICategoriesHeader[] = [];
+  categories: ICategories[] = [];
   items: string[] = [];
 
   constructor(
@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
     this.showNotifications = bool;
   }
 
-  getCategoryItems(category: ICategoriesHeader) {
+  getCategoryItems(category: ICategories) {
     this.items = category.items;
     for (let cat of this.categories) {
       if (cat === category) {

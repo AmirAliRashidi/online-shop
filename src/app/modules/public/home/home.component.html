@@ -1,6 +1,6 @@
 <app-loader *ngIf="isLoading"></app-loader>
-<div class="main-home">
-    <owl-carousel-o [options]="customOptions">
+<div class="main-home" *ngIf="!isLoading">
+    <owl-carousel-o [options]="mainOptions">
         <ng-container *ngFor="let slide of dynamicSlides">
             <ng-template carouselSlide>
                 <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title" class="carousel-image">
@@ -12,5 +12,25 @@
             <img class="category-image" [src]="category.image">
             <p class="category-name">{{ category.category_name.toUpperCase() }}</p>
         </div>
+    </div>
+    <div class="main-items">
+        <owl-carousel-o [options]="itemsOptions">
+            <ng-container *ngFor="let item of items">
+                <ng-template carouselSlide>
+                    <div class="item-container">
+                        <div class="image-container">
+                            <img [src]="item.image" [alt]="item.title" class="item-image">
+                            <div class="colors-container" *ngIf="item.colors?.length">
+                                <ng-container *ngFor="let color of item.colors">
+                                    <div class="color-body" [ngStyle]="{'background-color': color}"></div>
+                                </ng-container>
+                            </div>
+                        </div>
+                        <p class="item-title">{{ item.title }}</p>
+                        <p class="item-price">{{ item.price + dict.price_unit }}</p>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
     </div>
 </div>
