@@ -55,6 +55,7 @@ export class AuthComponent implements OnInit {
   }
 
   changeStatus() {
+    this.showPassword = false;
     this.isActive = !this.isActive;
   }
 

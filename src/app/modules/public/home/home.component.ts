@@ -56,23 +56,11 @@ export class HomeComponent implements OnInit {
     touchDrag: true,
     pullDrag: false,
     dots: true,
-    navSpeed: 100,
-    navText: ['&#8249', '&#8250;'],
+    navSpeed: 500,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
     items: 1,
-    // responsive: {
-    //   0: {
-    //     items: 1
-    //   },
-    //   400: {
-    //     items: 2
-    //   },
-    //   760: {
-    //     items: 3
-    //   },
-    //   1000: {
-    //     items: 1
-    //   }
-    // },
     nav: false
   }
 
@@ -82,7 +70,10 @@ export class HomeComponent implements OnInit {
     touchDrag: true,
     pullDrag: true,
     dots: true,
-    navSpeed: 200,
+    navSpeed: 500,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
     navText: ['&#8249', '&#8250;'],
     items: 6,
     responsive: {
