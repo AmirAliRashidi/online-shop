@@ -4,21 +4,47 @@
 	</div>
 	<div class="container" [ngClass]="isActive ? 'right-panel-active' : ''" id="container">
 		<div class="form-container sign-up-container">
-			<form>
+			<form [formGroup]="signUpForm" (ngSubmit)="signupFunc()">
 				<h1>{{ dict.create_account }}</h1>
-				<input nbInput fullWidth class="input-style" type="text" placeholder="Name" />
-				<input nbInput fullWidth class="input-style" type="email" placeholder="Email" />
-				<input nbInput fullWidth class="input-style" type="password" placeholder="Password" />
-				<button nbButton fullWidth status="primary">{{ dict.signup }}</button>
+				<input nbInput class="input-style" fullWidth type="text" placeholder="Name" formControlName="name" />
+				<input nbInput class="input-style" fullWidth type="text" placeholder="+98 913 528 2615"
+					formControlName="tel" />
+				<input nbInput class="input-style" fullWidth type="email" placeholder="Email" formControlName="email" />
+				<nb-form-field class="password-container">
+					<input *ngIf="showPassword" type="text" nbInput class="input-style" fullWidth placeholder="Password"
+						formControlName="password">
+					<input *ngIf="!showPassword" type="password" nbInput class="input-style" fullWidth
+						placeholder="Password" formControlName="password">
+					<nb-icon pack="fontawesome" nbSuffix class="eye-outline"></nb-icon>
+					<button nbPrefix nbButton ghost fullWidth (click)="toggleShowPassword()" type="button">
+						<nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'" pack="eva"
+							[attr.aria-label]="showPassword ? 'hide password' : 'show password'" class="password-icon">
+						</nb-icon>
+					</button>
+				</nb-form-field>
+				<button nbButton hero status="primary" [disabled]="!signUpForm.valid" fullWidth>
+					{{ dict.signup }}
+				</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form>
+			<form [formGroup]="loginForm" (ngSubmit)="loginFunc()">
 				<h1>{{ dict.login }}</h1>
-				<input nbInput fullWidth class="input-style" type="email" placeholder="Email" />
-				<input nbInput fullWidth class="input-style" type="password" placeholder="Password" />
+				<input nbInput class="input-style" fullWidth type="email" placeholder="Email" formControlName="email" />
+				<nb-form-field class="password-container">
+					<input *ngIf="showPassword" type="text" nbInput class="input-style" fullWidth placeholder="Password"
+						formControlName="password">
+					<input *ngIf="!showPassword" type="password" nbInput class="input-style" fullWidth
+						placeholder="Password" formControlName="password">
+					<nb-icon pack="fontawesome" nbSuffix class="eye-outline"></nb-icon>
+					<button nbPrefix nbButton ghost fullWidth (click)="toggleShowPassword()" type="button">
+						<nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'" pack="eva"
+							[attr.aria-label]="showPassword ? 'hide password' : 'show password'" class="password-icon">
+						</nb-icon>
+					</button>
+				</nb-form-field>
 				<a href="#">{{ dict.forgot_password }}</a>
-				<button nbButton fullWidth status="primary">{{ dict.login }}</button>
+				<button nbButton hero status="primary" [disabled]="!loginForm.valid" fullWidth>{{ dict.login }}</button>
 			</form>
 		</div>
 		<div class="overlay-container">
