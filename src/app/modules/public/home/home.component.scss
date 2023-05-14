@@ -100,9 +100,15 @@
             }
         }
 
-        .item-container:hover{
+        .item-container:hover {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             transform: scale(1.05);
         }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .item-container {
+        width: 80% !important;
     }
 }

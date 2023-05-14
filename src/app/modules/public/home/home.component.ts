@@ -87,16 +87,25 @@ export class HomeComponent implements OnInit {
     items: 6,
     responsive: {
       0: {
+        items: 1
+      },
+      450: {
         items: 2
       },
-      400: {
+      650: {
         items: 3
       },
       760: {
         items: 4
       },
-      1000: {
+      1080: {
         items: 5
+      },
+      1300: {
+        items: 6
+      },
+      1550: {
+        items: 7
       }
     },
     nav: true
