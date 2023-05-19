@@ -1,13 +1,16 @@
-import { NgModule } from '@angular/core';
+import { CodeInputComponentConfig, CodeInputComponentConfigToken } from './code-separator/code-separator.component.config';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NbCardModule, NbIconModule, NbInputModule, NbLayoutModule, NbToastrModule, NbButtonModule, NbFormFieldModule } from '@nebular/theme';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from '../base/loader/loader.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CodeSeparatorComponent } from './code-separator/code-separator.component';
 
 @NgModule({
   declarations: [
-    LoaderComponent
+    CodeSeparatorComponent,
+    LoaderComponent,
   ],
   imports: [
     HttpClientModule,
@@ -35,7 +38,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     NbFormFieldModule,
+    CodeSeparatorComponent,
   ],
   providers: [],
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot(config: CodeInputComponentConfig): ModuleWithProviders<SharedModule> {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        { provide: CodeInputComponentConfigToken, useValue: config }
+      ]
+    };
+  }
+}

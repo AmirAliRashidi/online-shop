@@ -1,0 +1,7 @@
+<div class="body">
+    <span *ngFor="let holder of placeholders; index as i" [class.code-hidden]="isCodeHidden">
+        <input #input (click)="onClick($event)" (paste)="onPaste($event, i)" (input)="onInput($event, i)"
+            (keydown)="onKeydown($event, i)" [type]="inputType" [disabled]="disabled" [attr.inputmode]="inputMode"
+            [attr.autocapitalize]="autocapitalize" autocomplete="one-time-code" />
+    </span>
+</div>
