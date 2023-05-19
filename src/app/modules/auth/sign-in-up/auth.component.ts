@@ -55,8 +55,10 @@ export class AuthComponent implements OnInit {
   }
 
   changeStatus() {
+    console.log('hi')
     this.showPassword = false;
     this.isActive = !this.isActive;
+    console.log('by')
   }
 
   gotoHome() {

@@ -166,7 +166,8 @@ a {
     color: #333;
     font-size: 14px;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 9px 0;
+    cursor: pointer;
 }
 
 form {
@@ -180,12 +181,16 @@ form {
     text-align: center;
 }
 
-.input-style{
-	margin: 8px 0;
+.input-style {
+    margin: 8px 0;
 }
 
 .password-icon {
     color: #444444;
+}
+
+.showbutton {
+    display: none;
 }
 
 @keyframes show {
@@ -200,5 +205,40 @@ form {
     100% {
         opacity: 1;
         z-index: 5;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .overlay {
+        display: none !important;
+    }
+
+    .container {
+        width: 350px;
+
+        .sign-in-container {
+            width: 100%;
+        }
+
+        .sign-up-container {
+            width: 100%;
+        }
+    }
+
+    .right-panel-active {
+        .sign-up-container {
+            transform: translateX(0%);
+            opacity: 1;
+            z-index: 5;
+            animation: show 0.1s;
+        }
+
+        .sign-in-container {
+            transform: translateX(0%);
+        }
+    }
+
+    .showbutton {
+        display: block;
     }
 }

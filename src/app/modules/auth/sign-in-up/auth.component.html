@@ -16,12 +16,13 @@
 					<input *ngIf="!showPassword" type="password" nbInput class="input-style" fullWidth
 						placeholder="Password" formControlName="password">
 					<nb-icon pack="fontawesome" nbSuffix class="eye-outline"></nb-icon>
-					<button nbPrefix nbButton ghost fullWidth (click)="toggleShowPassword()" type="button">
+					<button nbSuffix nbButton ghost fullWidth (click)="toggleShowPassword()" type="button">
 						<nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'" pack="eva"
 							[attr.aria-label]="showPassword ? 'hide password' : 'show password'" class="password-icon">
 						</nb-icon>
 					</button>
 				</nb-form-field>
+				<a class="showbutton" (click)="changeStatus()">already have an account?</a>
 				<button nbButton hero status="primary" [disabled]="!signUpForm.valid" fullWidth>
 					{{ dict.signup }}
 				</button>
@@ -37,13 +38,14 @@
 					<input *ngIf="!showPassword" type="password" nbInput class="input-style" fullWidth
 						placeholder="Password" formControlName="password">
 					<nb-icon pack="fontawesome" nbSuffix class="eye-outline"></nb-icon>
-					<button nbPrefix nbButton ghost fullWidth (click)="toggleShowPassword()" type="button">
+					<button nbSuffix nbButton ghost fullWidth (click)="toggleShowPassword()" type="button">
 						<nb-icon [icon]="showPassword ? 'eye-outline' : 'eye-off-2-outline'" pack="eva"
 							[attr.aria-label]="showPassword ? 'hide password' : 'show password'" class="password-icon">
 						</nb-icon>
 					</button>
 				</nb-form-field>
 				<a href="#">{{ dict.forgot_password }}</a>
+				<a class="showbutton" (click)="changeStatus()">Don't have account?</a>
 				<button nbButton hero status="primary" [disabled]="!loginForm.valid" fullWidth>{{ dict.login }}</button>
 			</form>
 		</div>
@@ -52,12 +54,12 @@
 				<div class="overlay-panel overlay-left">
 					<h1>{{ dict.login_maintext }}</h1>
 					<p>{{ dict.login_subtext }}</p>
-					<button nbButton status="danger" id="signIn" (click)="changeStatus()">{{ dict.login }}</button>
+					<button nbButton status="danger" (click)="changeStatus()">{{ dict.login }}</button>
 				</div>
 				<div class="overlay-panel overlay-right">
 					<h1>{{ dict.signup_maintext }}</h1>
 					<p>{{ dict.signup_subtext }}</p>
-					<button nbButton status="danger" id="signUp" (click)="changeStatus()">{{ dict.signup }}</button>
+					<button nbButton status="danger" (click)="changeStatus()">{{ dict.signup }}</button>
 				</div>
 			</div>
 		</div>
