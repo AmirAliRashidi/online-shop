@@ -14,4 +14,8 @@ export const OnlineShopDictionary = {
     login_subtext: 'To keep connected with us please login with your personal info',
     signup_maintext: 'Hello, Friend!',
     signup_subtext: 'Enter your personal details and start journey with us',
+    forgot_pass_veerify: 'send verifaction code',
+    lofin_signup: 'LOGIN / SIGNUP',
+    sendedPasscode: 'Enter sended passcode:',
+    forgetPassword: 'Forgot Password',
 }

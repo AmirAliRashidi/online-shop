@@ -55,13 +55,15 @@ export class AuthComponent implements OnInit {
   }
 
   changeStatus() {
-    console.log('hi')
     this.showPassword = false;
     this.isActive = !this.isActive;
-    console.log('by')
   }
 
   gotoHome() {
     this._router.navigateByUrl('/')
+  }
+
+  gotoForgetPassword(){
+    this._router.navigateByUrl('/auth/forget-password')
   }
 }

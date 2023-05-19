@@ -44,7 +44,7 @@
 						</nb-icon>
 					</button>
 				</nb-form-field>
-				<a href="#">{{ dict.forgot_password }}</a>
+				<a (click)="gotoForgetPassword()">{{ dict.forgot_password }}</a>
 				<a class="showbutton" (click)="changeStatus()">Don't have account?</a>
 				<button nbButton hero status="primary" [disabled]="!loginForm.valid" fullWidth>{{ dict.login }}</button>
 			</form>
